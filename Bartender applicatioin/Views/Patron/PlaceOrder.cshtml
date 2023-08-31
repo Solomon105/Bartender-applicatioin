@@ -1,0 +1,14 @@
+﻿@model List<CocktailMenu>
+
+<h2>Place an Order</h2>
+
+<form method="post">
+    <label for="cocktail">Select a Cocktail:</label>
+    <select id="cocktail" name="cocktailId">
+        @foreach (var cocktail in Model)
+        {
+            <option value="@cocktail.Id">@cocktail.Name - @cocktail.Price</option>
+        }
+    </select>
+    <button type="submit">Place Order</button>
+</form>

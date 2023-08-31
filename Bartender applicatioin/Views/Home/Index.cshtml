@@ -1,0 +1,15 @@
+﻿
+<h2>Welcome to the Bartender Application</h2>
+<a asp-action="Menu">View Cocktail Menu</a>
+
+
+<!-- Views/Home/Menu.cshtml -->
+@foreach (var cocktail in Model)
+{
+    <div>
+        <h3>@cocktail.Name</h3>
+        <p>@cocktail.Ingredients</p>
+        <p>Price: $@cocktail.Price</p>
+        <a asp-action="PlaceOrder" asp-route-id="@cocktail.Id">Place Order</a>
+    </div>
+}

@@ -1,0 +1,16 @@
+﻿@model List<CocktailOrder>
+
+<h2>Order Queue</h2>
+
+<ul>
+    @foreach (var order in Model)
+    {
+        <li>
+            @order.CustomerName - @order.CocktailName - @order.Status
+            @if (order.Status != "Completed")
+            {
+                <a asp-action="UpdateStatus" asp-route-id="@order.Id" asp-route-newStatus="Completed">Mark Completed</a>
+            }
+        </li>
+    }
+</ul>
